@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
 </head>
+
 <body>
     <script>
-        function computerPlay(){
+        function computerPlay() {
             let choise = Math.floor(Math.random() * 3);
             if (choise === 0) {
                 return 'Rock';
@@ -17,6 +19,37 @@
             }
             return 'Scissors';
         }
+
+        function capitalize(str) {
+            str = str.toLowerCase();
+            str = str.replace(str[0], str[0].toUpperCase());
+            return str;
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = capitalize(playerSelection);
+            if (computerSelection === playerSelection) {
+                return "Tie Game!";
+            }
+            switch (playerSelection) {
+                case "Rock":
+                    if (computerSelection === "Paper") {
+                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                    }
+                    return `You Win! ${playerSelection} beats ${computerSelection}`;
+                case "Paper":
+                    if (computerSelection === "Scissors") {
+                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                    }
+                    return `You Win! ${playerSelection} beats ${computerSelection}`;
+                case "Scissors":
+                    if (computerSelection === "Rock") {
+                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                    }
+                    return `You Win! ${playerSelection} beats ${computerSelection}`;
+            }
+        }
     </script>
 </body>
+
 </html>
