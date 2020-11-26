@@ -1,0 +1,132 @@
+body {
+    background-color: rgb(197, 197, 197);
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+}
+
+.game-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.game-status > span {
+    position: absolute;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0;
+    transform: translateY(-50%);
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 2px 2px #363636;
+}
+
+.player-move, .computer-move {
+    width: 120px;
+    height: 120px;
+    margin: 0 50px;
+    background-color: rgb(224, 224, 224);
+    border: 10px solid black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.player-move > span, .computer-move > span {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    top: -30px;
+    transform: translateY(-50%);
+}
+
+.player-score, .computer-score {
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px #ffd13c solid;
+}
+
+.player-score {
+    margin-right: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3.5rem;
+}
+
+.computer-score {
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3.5rem;
+}
+
+.game-moves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.game-moves .move {
+    width: 70px;
+    height: 70px;
+    border: 4px solid black;
+    margin-right: 20px;
+    padding: 0;
+    border-radius: 10px;
+    transition: 0.1s all ease;
+    cursor: pointer;
+}
+
+.game-moves button:focus {
+    outline: none;
+}
+
+.fa-hand-scissors {
+    transform: rotate(90deg) scaleY(-1);
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.result button {
+    font-size: 20px;
+}
+
+.game-moves .btn-select {
+    transform: scale(1.2);
+    border: 4px solid #ffd13c;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}

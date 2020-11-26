@@ -5,91 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/94c32bd062.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <script>
-        function computerPlay() {
-            let choise = Math.floor(Math.random() * 3);
-            if (choise === 0) {
-                return 'Rock';
-            }
-            if (choise === 1) {
-                return 'Paper';
-            }
-            return 'Scissors';
-        }
+    <div class="heading">
+        <h1>Rock, Paper, Scissors</h1>
+    </div>
 
-        function capitalize(str) {
-            str = str.toLowerCase();
-            str = str.replace(str[0], str[0].toUpperCase());
-            return str;
-        }
+    <div class="game-status">
+        <div class="player-move">
+            <span>Player</span>
+            <i class="far fa-5x fa-hand-none"></i>
+        </div>
+        <div class="player-score">0</div>
+        <span></span>
+        <div class="computer-score">0</div>
+        <div class="computer-move">
+            <span>Computer</span>
+            <i class="far fa-5x fa-hand-none"></i>
+        </div>
+    </div>
 
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = capitalize(playerSelection);
-            if (computerSelection === playerSelection) {
-                return "It's a Tie!";
-            }
-            switch (playerSelection) {
-                case "Rock":
-                    if (computerSelection === "Paper") {
-                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
-                    }
-                    return `You Win! ${playerSelection} beats ${computerSelection}`;
-                case "Paper":
-                    if (computerSelection === "Scissors") {
-                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
-                    }
-                    return `You Win! ${playerSelection} beats ${computerSelection}`;
-                case "Scissors":
-                    if (computerSelection === "Rock") {
-                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
-                    }
-                    return `You Win! ${playerSelection} beats ${computerSelection}`;
-                default:
-                    return "Please enter a valid move!";
-            }
-        }
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-            let userPlay;
-            let computerSelection;
-            for (let i = 0; i <= 4; i++) {
-                userPlay = prompt("Rock? Paper? Scissors?");
-                userPlay = capitalize(userPlay);
-                computerSelection = computerPlay();
-                let result = playRound(userPlay, computerSelection);
-                console.log(result);
-                if (result === `You Win! ${userPlay} beats ${computerSelection}`) {
-                    playerScore += 1;
-                }
-                else if (result === `You Lose! ${computerSelection} beats ${userPlay}`) {
-                    computerScore += 1;
-                }
-                else if (result === "It's a Tie!") {
-                    playerScore += 1;
-                    computerScore += 1;
-                }
-                else {
-                    i--;
-                }
-            }
-            console.log(`Your Score: ${playerScore}`);
-            console.log(`Computer Score: ${computerScore}`);
-            if (playerScore > computerScore) {
-                console.log("You Win The Game!");
-            }
-            else if (computerScore > playerScore) {
-                console.log("You Lose The Game!")
-            }
-            else {
-                console.log("Tie Game!");
-            }
-        }
-        game();
-    </script>
+    <div class="game-moves">
+        <button class="move" data-move="rock"><i class="far fa-hand-rock fa-4x"></i></button>
+        <button class="move" data-move="paper"><i class="far fa-hand-paper fa-4x"></i></button>
+        <button class="move" data-move="scissors"><i class="far fa-hand-scissors fa-4x"></i></button>
+    </div>
+
+    <div class="result hidden">
+        <h4></h4>
+        <button>Play Again</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
