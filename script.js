@@ -63,7 +63,7 @@ function playRound(playerSelection, computerSelection) {
                     ".game-status > span"
                 ).textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
                 break;
-            } else if (computerSelection === "rock") {
+            } else if (computerSelection === "paper") {
                 playerScore++;
                 document.querySelector(
                     ".game-status > span"
